@@ -1,0 +1,19 @@
+issue,affected_column,affected_rows,action_taken,reason
+Missing values,Delivery_person_Age,1854,Missing values retained,Median imputation was considered but not applied to avoid introducing artificial age values.
+Missing values,Delivery_person_Ratings,1908,Missing values retained,"Original missing ratings: 1908. An additional 53 invalid ratings were converted to missing, resulting in 1961 missing ratings after cleaning."
+Missing values,Time_Orderd,1731,Missing values retained,Order times cannot be reliably inferred from the available data.
+Missing values,Weather_conditions,616,Missing values retained,Weather conditions cannot be reliably inferred.
+Missing values,Road_traffic_density,601,Missing values retained,Traffic density cannot be reliably inferred.
+Missing values,multiple_deliveries,993,Missing values retained,Missing values were not assumed to represent zero deliveries.
+Missing values,Festival,228,Missing values retained,Festival status cannot be reliably inferred.
+Missing values,City,1200,Missing values retained,City information cannot be reliably inferred.
+Exact duplicate rows,All columns,0,No removal required,No exact duplicate rows were identified.
+Duplicate order IDs,ID,0,No removal required,No duplicate order IDs were identified.
+Ratings outside assumed 1-5 range,Delivery_person_Ratings,53,Missing values retained,Missing values include 53 invalid ratings converted to missing. No ratings were imputed.
+Delivery partner age below 18,Delivery_person_Age,38,Missing values retained,Median imputation was considered but not applied to avoid introducing artificial age values.
+Potential IQR outliers,Delivery_person_Ratings,1170,Missing values retained,Potential statistical outliers were retained because IQR outliers are not automatically invalid observations.
+Potential IQR outliers,Time_taken (min),270,Retained,Statistical outliers are not automatically invalid.
+Restaurant coordinates equal to zero,"Restaurant_latitude, Restaurant_longitude",3640,Retained pending geographical verification,The coordinate validity requires further source verification.
+Inconsistent time formats,Time_Orderd,4068,Converted decimal time values to minutes,Standardized time representations while preserving original values.
+Inconsistent time formats,Time_Order_picked,5007,Converted decimal and extended time values to minutes,Standardized time representations and preserved next-day rollover.
+Order and pickup time validation,Order_to_Pickup_Minutes,43853,Validated time differences; no negative or zero intervals found,All records with available order times had positive pickup intervals.
